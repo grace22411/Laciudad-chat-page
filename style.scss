@@ -58,7 +58,7 @@ body::-webkit-scrollbar-thumb{
 .mobile-view{
     display: none;
     .chat{
-        .user-chat{
+        .user-chat,.group-chat-mobile{
             display: none;
             .fa-arrow-left{
                 padding-right:20px;
@@ -71,9 +71,17 @@ body::-webkit-scrollbar-thumb{
         }
 
     }
+    .group-chat-mobile{
+        display: none;
+    }
 }
-
-.chat{
+.hidden {
+	display: none;
+}
+.items {
+	
+}
+.chat{ 
     margin-top:30px ;
     margin-bottom: 30px;
     font-family: 'Roboto', sans-serif;
@@ -131,6 +139,15 @@ body::-webkit-scrollbar-thumb{
                         height:40px;
                         border-radius:20px;
                         background-size: contain;
+                    }
+                    .group{
+                        background-color: #f0f0f0;
+                        text-align: center;
+                        padding-top:10px; 
+                        i{
+                            color:#fff;
+                            font-size:18px;
+                        }
                     }
                     .name-info{
                         width:65%;
@@ -205,6 +222,15 @@ body::-webkit-scrollbar-thumb{
                         border-radius:20px;
                         background-size: contain;
                     }
+                    .group{
+                        background-color: #fff;
+                        text-align: center;
+                        padding-top:10px; 
+                        i{
+                            color:#f0f0f0;
+                            font-size:18px;
+                        }
+                    }
                     .name-info{
                         width:65%;
                         padding-left: 20px;
@@ -246,19 +272,33 @@ body::-webkit-scrollbar-thumb{
                 overflow-y: scroll;
                 background-color:#fafafa;
                 padding: 20px;
+                .second-user-message,.user-message{
+                    width:100%;
+                    height:auto;
+                    //border:1px solid blue;
+                  
+                }
+
                 .second-user{
                     background-color: #fff;
                     min-width:auto;
                     max-width: 60%;
                     clear: both;
                     word-wrap: break-word;
-                    height:auto;
+                    min-height:20px;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
                     border-radius: 10px;
                     padding: 10px 15px 5px 15px;
                     font-size:13px;
                     margin-bottom: 20px;
                     margin-top: 15px;
+                    h3{
+                   
+                        padding: 4px;
+                        color:#845dce;
+                        font-weight: 600;
+                        font-size:14px;
+                    }
                 }
                 .user{
                     @extend .second-user;
@@ -269,7 +309,28 @@ body::-webkit-scrollbar-thumb{
                     margin-bottom: 4px;
                     background-color: #845dce;
                     color:#fff;
+                    h3{
+                        background-color: #845dce;;
+                        padding: 4px;
+                        color:#fff;
+                        font-weight: 600;
+                        font-size:14px;
+                    }
 
+                }
+                .date{
+                    width:100%;
+                    height:auto;
+                    clear:both;
+                    text-align: center;
+                    p{
+                        background-color: #fff;
+                        display: inline-block;
+                        padding: 5px;
+                        margin-bottom: 0;
+                        border-radius: 4px;
+                        box-shadow:0 5px 10px rgba(0,0,0,0.2);
+                    }
                 }
             }
                 .chat-body::-webkit-scrollbar-track{
@@ -320,6 +381,9 @@ body::-webkit-scrollbar-thumb{
                 }
             }
         }
+        .group-chat{
+            display: none;
+        }
         .info{
             background-color: transparent;
             padding: 0 0 0 15px;
@@ -352,8 +416,34 @@ body::-webkit-scrollbar-thumb{
             }
             .network{
                 @extend .profile;
-                margin-top: 20px;
-                height:calc(100% - 70);
+                margin-top: 10px;
+                padding-top: 10px;
+                height:370px;
+                h3{
+                    font-size:16px;
+                    margin-bottom: 15px;
+                }
+                .each-network{
+                    display: flex;
+                    border-top: 2px solid #f0f0f0;
+                    padding:15px;
+                    i{
+                        margin-right: 10px;
+                        font-size:14px;
+                        color:#c0c0c0;
+                    }
+                    h5{
+                        font-weight: 300;
+                        font-size:14px;
+                        margin-bottom: 0;
+                    }
+                    h4{
+                        margin-left: auto;
+                        font-size:15px;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                    }
+                }
 
             }
         }
