@@ -57,7 +57,7 @@ $(document).ready(function () {
         artificial(userMessage);
     });
 
-    $("#clear-chat").click(function () {
+    $(".clear-chat").click(function () {
         $(".chat-body").empty();
     });
 
@@ -215,4 +215,38 @@ $(document).ready(function () {
     //         filterItems.removeClass('hidden');
     //     }
     // });
+
+    $("#username-info").click(function(){
+        $(".side-info").hide();
+        $(".info_contact").show();
+    });
+
+    $(".username-info").click(function(){
+        $(".user-chat").hide();
+        $(".info_contact").fadeIn();
+    });
+    $(".fa-times").click(function(){
+        $(".side-info").fadeIn();
+        $(".info_contact").hide();
+        $(".info_group").hide();
+    });
+
+    $(".contact-time").click(function(){
+        $(".info_contact").hide();
+        $("#personal-chat-mobile").fadeIn();
+    });
+
+    $(".group-times").click(function(){
+        $(".info_group").hide();
+        $(".group-chat-mobile").fadeIn()
+    });
+
+    $(".group-head").click(function(){
+        $(".side-info").hide();
+        $(".info_contact").hide();
+        $(".group-chat-mobile").hide()
+        $(".info_group").fadeIn();
+        
+
+    });
 });

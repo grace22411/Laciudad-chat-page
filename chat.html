@@ -19,6 +19,60 @@
 </head>
 <body>
 
+    <div class="modal fade" id="blockModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Block Grace? Blocked contacts will no longer be able to call you or send you messages.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Block</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p> Report this contact/group to laciudad?</p>
+              <input type="checkbox" checked> Block contact and delete chat messages.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Report</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Delete chat with Grace?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p>Exit <span> "Kings Family" </span>Group?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Exit</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="mobile-view">
         <div class="container chat">
             <div class="row">
@@ -207,7 +261,7 @@
                 </div>
                 </div>
 
-                <div class="col-md-12 user-chat wow slideInRight" id=" personal-chat-mobile" data-wow-duration=".2s">
+                <div class="col-md-12 user-chat wow slideInRight" id="personal-chat-mobile" data-wow-duration=".2s">
                     <div class="chat-display">
                         <div class="header-chat">
                             <div class="each-user">
@@ -215,16 +269,21 @@
                                 <div class="profile-picture" style="background-image: url(images/p9.png);">
         
                                 </div>
-                                <div class="name-info">
+                                <div class="name-info username-info">
                                     <h3>Omole Grace</h3>
                                     <p>Engineer</p>
                                 </div>
                                 <div class="time">
                                     <div class="dropdown">
-                                        <button type="button" class="btn">
-                                          
-                                    <i class="fas fa-ellipsis-v"></i>
-                                        </button>
+                                        <button data-toggle="collapse" data-target="#demo"><i class="fas fa-ellipsis-v"></i></button>
+    
+                                        <div id="demo" class="collapse">
+                                            <ul>
+                                                <li>Mute Notifications</li>
+                                                <li class="clear-chat">Clear Messages</li>
+                                                <li>Delete Accout</li>
+                                            </ul>
+                                        </div>
                                       </div>
                                 </div>
                             </div>
@@ -274,16 +333,22 @@
                                 <div class="profile-picture" style="background-image: url(images/p9.png);">
         
                                 </div>
-                                <div class="name-info">
+                                <div class="name-info group-head">
                                     <h3>Kings Family</h3>
                                     <p>Grace,Ope, Shade,..</p>
                                 </div>
                                 <div class="time">
                                     <div class="dropdown">
-                                        <button type="button" class="btn">
-                                          
-                                    <i class="fas fa-ellipsis-v"></i>
-                                        </button>
+                                        <button data-toggle="collapse" data-target="#demo"><i class="fas fa-ellipsis-v"></i></button>
+    
+                                        <div id="demo" class="collapse">
+                                            <ul>
+                                                <li>Mute Notifications</li>
+                                                <li class="clear-chat">Clear Messages</li>
+                                                <li>Delete Accout</li>
+                                                <li class="new-group">New Group</li>
+                                            </ul>
+                                        </div>
                                       </div>
                                 </div>
                             </div>
@@ -326,6 +391,64 @@
                         </form>
                         </div>
     
+                    </div>
+                </div>
+                <div class="col-md-12 info">
+    
+                    <div class="info_contact" data-wow-duration=".2s">
+                        <div class="head-info">
+                            <p><i class="fas fa-times contact-time"></i> Contact Info </p>
+                        </div>
+                        <div class="profile">
+                            <div class="image" style="background-image: url(images/p9.png);"></div>
+                            <h3>Omole Grace</h3>
+                            <p><i class="fas fa-circle"></i> Online</p>
+                        </div>
+                        <div class="type-of-account">
+                            <p>Business Accout</p>
+                        </div>
+                        <div class="notification-mute">
+                            <p>Mute Notifications</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="about-and-number">
+                            <h5>About and Phone Number</h5>
+                            <p>Businer Owner</p>
+                            <p>+23456789372</p>
+                        </div>
+                        <div class="block"  data-toggle="modal" data-target="#blockModal">
+                            <p><i class="fas fa-ban"></i> Block</p> 
+                        </div>
+                        <div class="block"  style="color:red" data-toggle="modal" data-target="#reportModal">
+                           <p><i class="fas fa-thumbs-down"></i> Report contact</p> 
+                        </div>
+                        <div class="block delete-chat" style="color:red"  data-toggle="modal" data-target="#deleteModal">
+                            <p><i class="fas fa-trash"></i>Delete chat</p>
+                        </div>
+                    </div>
+    
+                    <div class="info_group" data-wow-duration=".2s">
+                        <div class="head-info">
+                            <p><i class="fas fa-times group-times"></i> Group Info </p>
+                        </div>
+                        <div class="profile">
+                            <div class="image" style="background-image: url(images/p9.png);"></div>
+                            <h3>Kings Family</h3>
+                            <p><i class="fas fa-circle"></i> Created 12/06/2020</p>
+                        </div>
+                        <div class="type-of-account">
+                            <p>Description</p>
+                        </div>
+                        <div class="notification-mute">
+                            <p>Mute Notifications</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="block delete-chat" style="color:red"  data-toggle="modal" data-target="#exitModal">
+                            <p><i class="fas fa-sign-out-alt"></i>Exit Group</p>
+                        </div>
+                        <div class="block"  style="color:red" data-toggle="modal" data-target="#reportModal">
+                           <p><i class="fas fa-thumbs-down"></i> Report Group</p> 
+                        </div>
                     </div>
                 </div>
                 
@@ -542,21 +665,22 @@
                             <div class="profile-picture" style="background-image: url(images/p9.png);">
     
                             </div>
-                            <div class="name-info">
+                            <div class="name-info contact-info" id="username-info">
                                 <h3>Omole Grace</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                             </div>
                             <div class="time">
+                                
                                 <div class="dropdown">
-                                    <button type="button" class="btn">
-                                      
-                                <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <!-- <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Mute Notifications</a>
-                                      <a class="dropdown-item" id="clear-chat" href="#">Clear Messages</a>
-                                      <a class="dropdown-item" href="#">Delete Account</a>
-                                    </div> -->
+                                    <button data-toggle="collapse" data-target="#demo"><i class="fas fa-ellipsis-v"></i></button>
+
+                                    <div id="demo" class="collapse">
+                                        <ul>
+                                            <li>Mute Notifications</li>
+                                            <li class="clear-chat">Clear Messages</li>
+                                            <li>Delete Accout</li>
+                                        </ul>
+                                    </div>
                                   </div>
                             </div>
                         </div>
@@ -606,21 +730,22 @@
                             <div class="profile-picture group">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <div class="name-info">
+                            <div class="name-info group-info group-head">
                                 <h3>Kings Family</h3>
                                 <p>Grace, smith, kunle ,Ifeoluwa, Opemiposi, ...</p>
                             </div>
                             <div class="time">
                                 <div class="dropdown">
-                                    <button type="button" class="btn">
-                                      
-                                <i class="fas fa-ellipsis-v"></i>
-                                    </button>
-                                    <!-- <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Mute Notifications</a>
-                                      <a class="dropdown-item" id="clear-chat" href="#">Clear Messages</a>
-                                      <a class="dropdown-item" href="#">Delete Account</a>
-                                    </div> -->
+                                    <button data-toggle="collapse" data-target="#demo"><i class="fas fa-ellipsis-v"></i></button>
+
+                                    <div id="demo" class="collapse">
+                                        <ul>
+                                            <li>Mute Notifications</li>
+                                            <li class="clear-chat">Clear Messages</li>
+                                            <li>Delete Accout</li>
+                                            <li class="new-group">New Group</li>
+                                        </ul>
+                                    </div>
                                   </div>
                             </div>
                         </div>
@@ -668,42 +793,100 @@
                 </div>
             </div>
             <div class="col-md-3 info">
-                <div class="profile">
-                    <div class="image" style="background-image: url(images/p9.png);"></div>
-                    <h3>Omole Grace</h3>
-                    <p><i class="fas fa-circle"></i> Online</p>
+                <div class="side-info">
+                    <div class="profile">
+                        <div class="image" style="background-image: url(images/p9.png);"></div>
+                        <h3>Omole Grace</h3>
+                        <p><i class="fas fa-circle"></i> Online</p>
+                    </div>
+                    <div class="network">
+                        <h3>Manage My Networks</h3>
+                        <div class="each-network">
+                            <i class="fas fa-user-friends"></i>
+                            <h5>Connections</h5>
+                            <h4>56</h4>
+                        </div>
+                        <div class="each-network">
+                            <i class="far fa-id-badge"></i>
+                            <h5>Contacts</h5>
+                            <h4>105</h4>
+                        </div>
+                        <div class="each-network">
+                            <i class="fas fa-user-check"></i>
+                            <h5>People I Follow</h5>
+                            <h4>10</h4>
+                        </div>
+                        <div class="each-network">
+                            <i class="fas fa-users"></i>
+                            <h5>Groups</h5>
+                            <h4>15</h4>
+                        </div>
+                        <div class="each-network">
+                            <i class="fas fa-pager"></i>
+                            <h5>Page</h5>
+                            <h4>5</h4>
+                        </div>
+                        <div class="each-network">
+                            <i class="fas fa-tag"></i>
+                            <h5>Hashtags</h5>
+                            <h4>8</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="network">
-                    <h3>Manage My Networks</h3>
-                    <div class="each-network">
-                        <i class="fas fa-user-friends"></i>
-                        <h5>Connections</h5>
-                        <h4>56</h4>
+
+                <div class="info_contact wow slideInRight" data-wow-duration=".2s">
+                    <div class="head-info">
+                        <p><i class="fas fa-times"></i> Contact Info </p>
                     </div>
-                    <div class="each-network">
-                        <i class="far fa-id-badge"></i>
-                        <h5>Contacts</h5>
-                        <h4>105</h4>
+                    <div class="profile">
+                        <div class="image" style="background-image: url(images/p9.png);"></div>
+                        <h3>Omole Grace</h3>
+                        <p><i class="fas fa-circle"></i> Online</p>
                     </div>
-                    <div class="each-network">
-                        <i class="fas fa-user-check"></i>
-                        <h5>People I Follow</h5>
-                        <h4>10</h4>
+                    <div class="type-of-account">
+                        <p>Business Accout</p>
                     </div>
-                    <div class="each-network">
-                        <i class="fas fa-users"></i>
-                        <h5>Groups</h5>
-                        <h4>15</h4>
+                    <div class="notification-mute">
+                        <p>Mute Notifications</p>
+                        <input type="checkbox">
                     </div>
-                    <div class="each-network">
-                        <i class="fas fa-pager"></i>
-                        <h5>Page</h5>
-                        <h4>5</h4>
+                    <div class="about-and-number">
+                        <h5>About and Phone Number</h5>
+                        <p>Businer Owner</p>
+                        <p>+23456789372</p>
                     </div>
-                    <div class="each-network">
-                        <i class="fas fa-tag"></i>
-                        <h5>Hashtags</h5>
-                        <h4>8</h4>
+                    <div class="block"  data-toggle="modal" data-target="#blockModal">
+                        <p><i class="fas fa-ban"></i> Block</p> 
+                    </div>
+                    <div class="block"  style="color:red" data-toggle="modal" data-target="#reportModal">
+                       <p><i class="fas fa-thumbs-down"></i> Report contact</p> 
+                    </div>
+                    <div class="block delete-chat" style="color:red"  data-toggle="modal" data-target="#deleteModal">
+                        <p><i class="fas fa-trash"></i>Delete chat</p>
+                    </div>
+                </div>
+
+                <div class="info_group wow slideInRight" data-wow-duration=".2s">
+                    <div class="head-info">
+                        <p><i class="fas fa-times"></i> Group Info </p>
+                    </div>
+                    <div class="profile">
+                        <div class="image" style="background-image: url(images/p9.png);"></div>
+                        <h3>Kings Family</h3>
+                        <p><i class="fas fa-circle"></i> Created 12/06/2020</p>
+                    </div>
+                    <div class="type-of-account">
+                        <p>Description</p>
+                    </div>
+                    <div class="notification-mute">
+                        <p>Mute Notifications</p>
+                        <input type="checkbox">
+                    </div>
+                    <div class="block delete-chat" style="color:red"  data-toggle="modal" data-target="#exitModal">
+                        <p><i class="fas fa-sign-out-alt"></i>Exit Group</p>
+                    </div>
+                    <div class="block"  style="color:red" data-toggle="modal" data-target="#reportModal">
+                       <p><i class="fas fa-thumbs-down"></i> Report Group</p> 
                     </div>
                 </div>
             </div>
